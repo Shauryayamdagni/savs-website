@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Printout{% endblock title %}
+
+{%block body%}
+
+{% comment %}
+	<div class='container'>
+	
+	<img src="http://source.unsplash.com/1200x400/?stationary" class="d-block w-100" alt="...">
+	
+	</div>
+{% endcomment %}
+
+
+<div class='container py-4'>
+    <form method="post" action="/stationary/printout" >
+        {% csrf_token %}
+        <div class="mb-3">
+        <label for="name" class="form-label">Enter your name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name ">
+        </div>
+
+        <div class="mb-3">
+        <label for="email" class="form-label">Enter your Phone Number</label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your number ">
+        </div>
+
+        <div class="mb-3">
+        <label for="email" class="form-label">Enter your Email</label>
+        <input type="Email" class="form-control" id="email" name="email" placeholder="Enter your Email ">
+        </div>
+
+
+        <div class="mb-3">
+        <label for="desc" class="form-label">Some Additional Instructions</label>
+        <textarea class="form-control" id="desc" name="desc" rows="2"></textarea>
+        </div>
+
+        <div class="mb-3">
+        <label for="pdf" class="form-label">Upload the files to be printed</label>
+        <input class="form-control" type="file" id="pdf" name="pdf" multiple>
+        </div>
+
+        <div class ="mb-3 my-4">
+        <select class="custom-select" id="freq" name="freq" >
+            <option selected >Select Number of Printouts</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="3">4</option>
+            <option value="3">5</option>
+            <option value="3">7</option>
+            <option value="3">8</option>
+            <option value="3">9</option>
+            <option value="3">10</option>
+            <option value="3">11</option>
+            <option value="3">12</option>
+        </select>
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary">SUBMIT</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+<div class='container my-4'>
+   {% comment %}
+	 <div class="mb-3">
+	        <label for="formFile" class="form-label">Default file input example</label>
+	        <input class="form-control" type="file" id="formFile">
+	      </div>
+{% endcomment %}
+
+      {% comment %}
+	<div class="mb-3">
+	        <label for="formFileDisabled" class="form-label">Disabled file input example</label>
+	        <input class="form-control" type="file" id="formFileDisabled" disabled>
+	      </div>
+{% endcomment %}
+     {% comment %}
+	 <div class="mb-3">
+	        <label for="formFileSm" class="form-label">Small file input example</label>
+	        <input class="form-control form-control-sm" id="formFileSm" type="file">
+	      </div>
+	      <div>
+	        <label for="formFileLg" class="form-label">Large file input example</label>
+	        <input class="form-control form-control-lg" id="formFileLg" type="file">
+	      </div>
+{% endcomment %}
+</div>
+
+{% endblock body%}
